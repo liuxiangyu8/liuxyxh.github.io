@@ -1,0 +1,61 @@
+[
+    {
+        "id": "default",
+        "name": "默认接口",
+        "url": "https://jx.xmflv.com/?url={url}",
+        "platforms": [
+            "iqiyi",
+            "tencent",
+            "youku",
+            "mgtv",
+            "bilibili"
+        ]
+    },
+    {
+        "id": "api1",
+        "name": "解析接口1",
+        "url": "https://jx.xymp4.cc/?url={url}",
+        "platforms": [
+            "iqiyi",
+            "tencent",
+            "youku",
+            "mgtv",
+            "bilibili"
+        ]
+    },
+    {
+        "id": "api2",
+        "name": "解析接口2",
+        "url": "https://jx.2s0.cn/player/analysis.php?v={url}",
+        "platforms": [
+            "iqiyi",
+            "tencent",
+            "youku",
+            "mgtv"
+        ]
+    },
+    {
+        "id": "api3",
+        "name": "解析接口3",
+        "url": "https://jx.77flv.cc/?url={url}",
+        "platforms": [
+            "iqiyi",
+            "tencent",
+            "youku",
+            "bilibili",
+            "sohu"
+        ]
+    },
+    {
+        "id": "api4",
+        "name": "搜影片名",
+        "url": "https://z1.m1907.top?jx={url}",
+        "platforms": [
+            "iqiyi",
+            "tencent",
+            "youku",
+            "mgtv",
+            "bilibili"
+        ]
+    }
+]

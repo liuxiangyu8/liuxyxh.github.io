@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIP视频解析 - 云影院</title>
+    <meta name="description" content="云影院VIP视频解析服务，支持爱奇艺、腾讯视频、优酷、芒果TV等主流视频网站VIP内容免费解析观看。">
+    <meta name="keywords" content="VIP视频解析,爱奇艺解析,腾讯视频解析,优酷解析,芒果TV解析,免费VIP观看">
+    <link href="https://fastly.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fastly.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="static/css/vip.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html" style="color: #ff6b00; font-size: 1.5rem; font-weight: 700;"
+                id="navbarBrand">
+                <i class="bi bi-film"></i> 云影院
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto" id="navbarMenu">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">首页</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="vip.html">VIP解析</a>
+                    </li>
+
+                </ul>
+                <form class="d-flex">
+                    <input type="text" class="search-input me-2" placeholder="搜索你想看的电影" id="searchInput">
+                    <button type="button" class="search-btn" onclick="searchMovies()"><i
+                            class="bi bi-search"></i></button>
+                    <button type="button" class="search-btn ms-2" onclick="location.href='record.html'">
+                        <i class="bi bi-clock-history"></i> 历史
+                    </button>
+                </form>
+                
+            </div>
+        </div>
+    </nav>
+
+    <!-- 英雄区域 -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h1 class="hero-title">VIP视频解析</h1>
+                    <p class="hero-subtitle">支持全网主流视频网站VIP内容免费观看，无需登录，操作简单</p>
+                    <div class="platforms">
+                        <span class="platform-tag">爱奇艺</span>
+                        <span class="platform-tag">腾讯视频</span>
+                        <span class="platform-tag">优酷</span>
+                        <span class="platform-tag">芒果TV</span>
+                        <span class="platform-tag">哔哩哔哩</span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card"
+                        style="background: rgba(255, 255, 255, 0.05); border: none; border-radius: 12px; overflow: hidden;">
+                        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=video%20player%20interface%20with%20play%20button%20and%20VIP%20badge&image_size=landscape_16_9"
+                            alt="VIP视频解析" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 解析区域 -->
+    <section class="parse-section">
+        <div class="container">
+            <div class="parse-card">
+                <div class="parse-header">
+                    <h3><i class="bi bi-link-45deg"></i> 视频链接解析</h3>
+                    <p>复制视频链接到下方输入框，选择解析接口即可免费观看VIP内容</p>
+                </div>
+                <div class="parse-body">
+                    <div class="mb-3">
+                        <input type="text" class="form-control parse-input" id="videoUrl"
+                            placeholder="请输入视频链接（如：https://www.iqiyi.com/v_xxx.html）" autocomplete="off">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">选择解析接口：</label>
+                        <select class="form-select parse-select" id="parseApi">
+                            <option value="">请选择解析接口</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-warning btn-lg w-100" id="parseBtn">
+                        <i class="bi bi-play-circle-fill"></i> 开始解析播放
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 支持平台 -->
+    <section class="platform-section">
+        <div class="container">
+            <h2 class="section-title"><i class="bi bi-tv"></i> 支持平台</h2>
+            <div class="platform-grid">
+                <div class="platform-item">
+                    <i class="bi bi-film"></i>
+                    <span>爱奇艺</span>
+                </div>
+                <div class="platform-item">
+                    <i class="bi bi-tv"></i>
+                    <span>腾讯视频</span>
+                </div>
+                <div class="platform-item">
+                    <i class="bi bi-camera-reels"></i>
+                    <span>优酷视频</span>
+                </div>
+                <div class="platform-item">
+                    <i class="bi bi-star"></i>
+                    <span>芒果TV</span>
+                </div>
+                <div class="platform-item">
+                    <i class="bi bi-heart"></i>
+                    <span>哔哩哔哩</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 特色功能 -->
+    <section class="features-section">
+        <div class="container">
+            <h2 class="section-title"><i class="bi bi-lightbulb"></i> 服务特色</h2>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="feature-card">
+                        <i class="bi bi-cloud-download"></i>
+                        <h4>极速解析</h4>
+                        <p>采用CDN加速技术，确保视频流畅播放，告别卡顿困扰</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="feature-card">
+                        <i class="bi bi-badge-4k"></i>
+                        <h4>高清画质</h4>
+                        <p>支持1080P高清、4K超清画质播放，影院级观影体验</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="feature-card">
+                        <i class="bi bi-phone"></i>
+                        <h4>全端适配</h4>
+                        <p>完美适配PC、平板、手机等所有设备，随时随地观看</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="feature-card">
+                        <i class="bi bi-shield-lock"></i>
+                        <h4>安全可靠</h4>
+                        <p>无需下载软件，直接通过浏览器使用，安全无毒</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5 style="color: #ff6b00; margin-bottom: 15px;" id="footerName"></h5>
+                    <p style="color: rgba(255, 255, 255, 0.6);" id="footerDescription"></p>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col text-center">
+                    <p style="color: rgba(255, 255, 255, 0.4);" id="footerCopyright">
+                        本站不存储任何视频内容，所有VIP视频解析接口也来自于互联网，请勿用于任何商业用途，否则后果自负。解析中出现的广告勿信，与本站无关。</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 解析结果弹窗 -->
+    <div class="modal fade" id="parseModal" tabindex="-1" aria-labelledby="parseModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content" style="background: rgba(0, 0, 0, 0.95); border: none;">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="parseModalLabel">解析结果</h5>
+                    <button class="btn btn-outline-warning ml-3" id="copyLinkBtn">
+                        <i class="bi bi-clipboard"></i> 复制播放链接
+                    </button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                        style="filter: invert(1);"></button>
+                </div>
+                <div class="modal-body" style="height: calc(100vh - 120px);">
+                    <div id="parseLoading" class="text-center py-5">
+                        <i class="bi bi-hourglass-split"
+                            style="font-size: 3rem; margin-bottom: 20px; color: #ff6b00;"></i>
+                        <p>正在解析视频，请稍候...</p>
+                    </div>
+                    <div id="parseResult" style="display: none; height: 100%;">
+                        <div class="video-container" style="height: calc(100% - 0px);">
+                            <iframe id="videoPlayer" width="100%" height="100%" frameborder="0"
+                                allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div id="parseError" style="display: none;" class="text-center py-5">
+                        <i class="bi bi-exclamation-circle"
+                            style="font-size: 3rem; margin-bottom: 20px; color: #ff4d4f;"></i>
+                        <p id="errorMessage">解析失败，请检查链接是否正确或尝试其他解析接口</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://fastly.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="static/js/vip.js"></script>
+</body>
+
+</html>

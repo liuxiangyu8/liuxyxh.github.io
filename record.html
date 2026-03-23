@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>云影院 - 高清电影在线观看</title>
-    <meta name="description" content="云影院提供海量正版高清电影在线观看，包括最新电影、热门电视剧、综艺节目、动漫和纪录片，无需注册即可免费观看。">
-    <meta name="keywords" content="云影院,电影在线观看,高清电影,免费电影,电视剧在线观看,综艺在线观看,动漫在线观看">
+    <title>播放历史 - 云影院</title>
+    <meta name="description" content="云影院播放历史页面，查看您最近观看的视频记录，包括播放进度和观看时间。">
+    <meta name="keywords" content="播放历史,观看记录,视频历史,云影院">
     <link href="https://fastly.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fastly.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
     <link href="static/css/index.css" rel="stylesheet">
@@ -26,13 +26,13 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto" id="navbarMenu">
                     <li class="nav-item">
-                        <a class="nav-link active" href="index.html">首页</a>
+                        <a class="nav-link" href="index.html">首页</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="vip.html">VIP解析</a>
                     </li>
-                </ul>
 
+                </ul>
                 <form class="d-flex">
                     <input type="text" class="search-input me-2" placeholder="搜索你想看的电影" id="searchInput">
                     <button type="button" class="search-btn" onclick="searchMovies()"><i
@@ -45,48 +45,25 @@
         </div>
     </nav>
 
-    <!-- 英雄区域 -->
-    <section class="hero-section">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <h1 class="hero-title">高清云影院</h1>
-                    <p class="hero-subtitle">海量正版高清，好莱坞电影在线观看，享受极致观影体验</p>
-                    <div>
-                        <button class="btn btn-warning btn-lg" style="margin-right: 15px;">立即观看</button>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card"
-                        style="background: rgba(255, 255, 255, 0.05); border: none; border-radius: 12px; overflow: hidden;">
-                        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=cinema%20movie%20screen%20with%20popcorn%20and%203D%20glasses&image_size=landscape_16_9"
-                            alt="云影院" class="img-fluid">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- 播放历史区域 -->
+    <div class="container mt-5 pt-5">
+        <h2 class="mb-4" style="color: white; font-weight: 600;">播放历史</h2>
 
-    <!-- 分类标签 -->
-    <div class="container">
-        <div class="category-tabs text-center">
-            <button class="category-tab active" onclick="filterMovies('all')">全部</button>
-            <button class="category-tab" onclick="filterMovies('科幻')">科幻</button>
-            <button class="category-tab" onclick="filterMovies('动作')">动作</button>
-            <button class="category-tab" onclick="filterMovies('爱情')">爱情</button>
-            <button class="category-tab" onclick="filterMovies('剧情')">剧情</button>
-            <button class="category-tab" onclick="filterMovies('动画')">动画</button>
-        </div>
-    </div>
-
-    <!-- 电影列表 -->
-    <div class="container">
-        <h2 class="mb-4" style="color: white; font-weight: 600;">热门电影</h2>
-        <div class="row" id="moviesContainer">
+        <!-- 历史记录列表 -->
+        <div class="row" id="historyContainer">
             <div class="loading">
                 <i class="bi bi-hourglass-split" style="font-size: 2rem; margin-bottom: 10px;"></i>
                 <p>加载中...</p>
             </div>
+        </div>
+
+        <!-- 空状态提示 -->
+        <div class="text-center py-10" id="emptyState" style="display: none;">
+            <i class="bi bi-clock-history"
+                style="font-size: 4rem; color: rgba(255, 255, 255, 0.3); margin-bottom: 20px;"></i>
+            <h4 style="color: rgba(255, 255, 255, 0.7);">暂无播放历史</h4>
+            <p style="color: rgba(255, 255, 255, 0.4); margin-top: 10px;">去首页观看视频，开始您的观影之旅</p>
+            <button class="btn btn-warning mt-4" onclick="location.href='index.html'">去首页</button>
         </div>
     </div>
 
@@ -109,7 +86,7 @@
     </footer>
 
     <script src="https://fastly.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="static/js/index.js"></script>
+    <script src="static/js/record.js"></script>
 </body>
 
 </html>
