@@ -112,9 +112,6 @@ function saveVideoHistory(videoUrl) {
     // 获取现有历史记录
     let history = JSON.parse(localStorage.getItem('videoHistory') || '[]');
 
-    // 移除相同视频的旧记录
-    history = history.filter(item => item.url !== videoUrl);
-
     // 添加到历史记录开头
     history.unshift(historyItem);
 
